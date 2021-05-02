@@ -1,0 +1,224 @@
+@media (min-width: 640px) {
+  .menu {
+    &__img {
+      width: 45%;
+  
+      @for $i from 1 through 2 {
+        &:nth-of-type(#{$i}) {
+          animation-delay: .1s * $i;
+        }
+      }
+      @for $i from 4 through 5 {
+        &:nth-of-type(#{$i}) {
+          animation-delay: .1s * $i;
+        }
+      }
+      @for $i from 6 through 7 {
+        &:nth-of-type(#{$i}) {
+          animation-delay: .1s * $i;
+        }
+      }
+      @for $i from 8 through 9 {
+        &:nth-of-type(#{$i}) {
+          animation-delay: .1s * $i;
+        }
+      }
+    }
+
+    &__btn {
+      width: 150px;
+    }
+  
+    h3 {
+      font-size: 2.2rem;
+    }
+    p {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+@media (min-width: 940px) {
+  .menu {
+    &__img {
+      width: 30%;
+      min-width: 300px;
+  
+      @for $i from 1 through 3 {
+        &:nth-of-type(#{$i}) {
+          animation-delay: .1s * $i;
+        }
+      }
+      @for $i from 4 through 6 {
+        &:nth-of-type(#{$i}) {
+          animation-delay: .1s * $i;
+        }
+      }
+      @for $i from 7 through 9 {
+        &:nth-of-type(#{$i}) {
+          animation-delay: .1s * $i;
+        }
+      }
+    }
+
+    h3 {
+      font-size: 2.0rem;
+    }
+    p {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  section {
+    padding-top: 90px;
+  }
+
+  .contentWidth {
+    max-width: 1296px;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .global {
+    &__btn {
+      display: none;
+    }
+  }
+
+  .header {
+    &__container {
+      @extend .contentWidth;
+    }
+
+    nav {
+      height: 50px;
+      line-height: 50px;
+    }
+
+    &__ul {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__link {
+      font-size: 1.8rem;
+      display: block;
+      padding: 0 30px;
+      transition: all .3s;
+
+      &:hover {
+        background: $brown;
+      }
+    }
+
+    &__top {
+      font-size: 3.0rem !important;
+    }
+  }
+
+  .hero {
+    &__title {
+      font-size: 8rem;
+    }
+    &__description {
+      font-size: 2.0rem;
+      top: 58%;
+    }
+  }
+
+  .news {
+    max-width: 680px;
+    margin: 0 auto;
+
+    h2 {
+      margin-bottom: 90px;
+    }
+
+    dl {
+      display: flex;
+      padding-left: 120px;
+
+      dt {
+        margin-bottom: 0;
+      }
+
+      dd {
+        padding-left: 80px;
+      }
+    }
+  }
+
+  .about {
+    @extend .contentWidth;
+    padding-top: 120px;
+
+    &__container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__text {
+      flex-basis: 40%;
+      padding: 60px 30px 0;
+      margin-bottom: 0;
+    }
+
+    &__img {
+      flex-basis: 55%;
+    }
+  }
+
+  .access {
+    @extend .contentWidth;
+
+    &__container {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+    }
+
+    &__wrapper {
+      flex-basis: 40%;
+      padding-top: 60px;
+      margin-bottom: 0;
+    }
+
+    dl {
+      display: flex;
+
+      dt {
+        width: 40%;
+        margin-bottom: 0;
+      }
+    }
+
+    &__img {
+      flex-basis: 55%;
+    }
+
+    &__map {
+      height: 450px;
+    }
+  }
+
+  .footer {
+    margin-top: 120px;
+
+    &__container {
+      @extend .contentWidth;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__ul {
+      width: 30%;
+      justify-content: flex-end;
+    }
+
+    small {
+      padding-top: 30px;
+    }
+  }
+}

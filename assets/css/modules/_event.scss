@@ -1,0 +1,241 @@
+.active {
+  .global {
+    &__nav {
+      transform: none;
+    }
+
+    &__btn {
+      span {
+        &:nth-child(1) {
+          top: 50%;
+          left: 20%;
+          transform: rotate(135deg);
+        }
+        &:nth-child(2) {
+          transform: scale(0);
+        }
+        &:nth-child(3) {
+          top: 50%;
+          left: 20%;
+          transform: rotate(-135deg);
+        }
+      }
+    }
+  }
+}
+
+.UpMove {
+  animation: UpMove .5s forwards;
+
+  @keyframes UpMove {
+    from {
+      opacity: 0;
+      transform: translateY(100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.DownMove {
+  animation: DownMove .5s forwards;
+
+  @keyframes DownMove {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(100px);
+    }
+  }
+}
+
+.fadeUp {
+  animation: fadeUp .5s forwards;
+  opacity: 0;
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.fadeUpTrigger {
+  opacity: 0;
+}
+
+.bgExtend {
+  animation: bgAppear 1s forwards;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.bgAppear {
+  animation: bgAppear 1s .6s forwards;
+  opacity: 0;
+}
+
+@keyframes bgAppear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.bgSlide::before {
+  animation: bgSlide 1s forwards;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: $main;
+
+  @keyframes bgSlide {
+    0% {
+      transform-origin: left;
+      transform: scaleX(0);
+    }
+    50% {
+      transform-origin: left;
+      transform: scaleX(1);
+    }
+    50.1% {
+      transform-origin: right;
+    }
+    100% {
+      transform-origin: right;
+      transform: scaleX(0);
+    }
+  }
+}
+
+.bgSlideTrigger,
+.bgAppearTrigger {
+  opacity: 0;
+}
+
+.non {
+  background: transparent;
+
+  .header__link:hover {
+    color: $brown;
+    background: transparent;
+  }
+}
+
+.is-active {
+  display: block;
+  opacity: 1;
+}
+
+.open {
+  &.accordion__title {
+    &::after {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.block {
+  display: block;
+}
+
+.visible {
+  animation: bgAppear 1s .6s forwards;
+  display: flex;
+}
+
+.loader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: $main;
+  z-index: 7;
+  text-align: center;
+  color: $white;
+
+  &__logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 6.4rem;
+    font-family: 'Parisienne', cursive;
+    opacity: 0;
+    animation: bgAppear 1.2s ease-in-out forwards;
+  }
+
+  &__slide {
+    display: none;
+  }
+}
+
+.appear {
+  .loader {
+    &__slide {
+      display: block;
+      position: fixed;
+      z-index: 9;
+      width: 100%;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      transform: scaleX(0);
+      background: $main;
+      animation: pageAnime 1.2s ease-in-out forwards;
+
+      @keyframes pageAnime {
+        0% {
+          transform-origin: left;
+          transform: scaleX(0)
+        }
+        50% {
+          transform-origin: left;
+          transform: scaleX(1)
+        }
+        50.1% {
+          transform-origin: right;
+        }
+        100% {
+          transform-origin: right;
+          transform: scaleX(0)
+        }
+      }
+    }
+  }
+
+  .global {
+    animation: bgAppear 1s .8s forwards;
+    opacity: 0;
+  }
+}
+
+.eachText span {
+  opacity: 0;
+}
+
+.eachText.appearText span {
+  animation: bgAppear 1s ease-out forwards;
+}
+
+@keyframes kenburns {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.5);
+  }
+}
