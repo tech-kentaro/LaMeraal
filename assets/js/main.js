@@ -171,8 +171,8 @@ $('.menu__btn').click(function() {
 $(window).ready(function() {
   splitText();
   $(window).on('load', function() {
-    $('.loader__logo').delay(2000).fadeOut('slow');
-    $('.loader').delay(2500).fadeOut('slow', function() {
+    $('.loader__logo').delay(1000).fadeOut('slow');
+    $('.loader').delay(1500).fadeOut('slow', function() {
       $('body').addClass('appear');
       vegasInit();
     });
